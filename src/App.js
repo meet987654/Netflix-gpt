@@ -1,19 +1,8 @@
-
-import './App.css';
+import Body from "./components/Body";
 
 function App() {
   return (
-    <div className="m-10 text-3xl">
-     
-      
-        <p>
-        Learn React
-        </p>
-    
-          
-      
-      
-    </div>
+     <Body/>
   );
 }
 
