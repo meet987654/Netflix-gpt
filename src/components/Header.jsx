@@ -5,6 +5,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { addUser, removeUser } from '../utils/userSlice';
+import { logo, userIcon } from '../utils/constants';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -40,14 +41,14 @@ const Header = () => {
     <div className='justify-between flex py-10 px-10 absolute z-20 w-full bg-gradient-to-b from-black'>
       <img
         className='w-48'
-        src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+        src={logo}
         alt='logo'
       />
       {user && (
         <div className='mt-10 flex'>
           <img
             className='w-10'
-            src='https://th.bing.com/th/id/R.c3631c652abe1185b1874da24af0b7c7?rik=XBP%2fc%2fsPy7r3HQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpng-user-icon-circled-user-icon-2240.png&ehk=z4ciEVsNoCZtWiFvQQ0k4C3KTQ6wt%2biSysxPKZHGrCc%3d&risl=&pid=ImgRaw&r=0'
+            src={userIcon}
             alt='userIcon'
           />
           <button

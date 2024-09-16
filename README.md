@@ -13,6 +13,7 @@
 -Create SignUp User Account
 -Implement sign in user api
 -Created Redux store with Userslice and provided to Body component in app.js
+-Add hardcoded value to constatnts file
 
 # Features
 
