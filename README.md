@@ -13,7 +13,9 @@
 -Create SignUp User Account
 -Implement sign in user api
 -Created Redux store with Userslice and provided to Body component in app.js
--Add hardcoded value to constatnts file
+-Add hardcoded value to constants file
+-Register TMDB API & create an app & get access token
+-Get Data from TMDB now playing movie list API
 
 # Features
 
