@@ -20,6 +20,11 @@
 -Update store with trailer data
 -Update moviesslice
 -Built Maincontainer
+-Build Secondary Component
+-Build movieList and movieCard
+-Applying tailwind for components
+-use custom hooks for popular,trending etc movies.
+-GPT serach feature
 # Features
 
 -Log in/sign up

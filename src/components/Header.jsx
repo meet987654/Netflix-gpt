@@ -46,6 +46,7 @@ const Header = () => {
       />
       {user && (
         <div className='mt-10 flex'>
+          <button className='py-3 px-4 bg-gray-200 bg-opacity-90 text-black'>GPT Search</button>
           <img
             className='w-10 invert'
             src={userIcon}
