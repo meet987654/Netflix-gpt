@@ -6,12 +6,16 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { addUser, removeUser } from '../utils/userSlice';
 import { logo, userIcon } from '../utils/constants';
+import { toggleGPTSearchView } from '../utils/gptSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-
+  
+  const handleSearchgpt=()=>{
+    dispatch(toggleGPTSearchView())
+  }
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -21,7 +25,7 @@ const Header = () => {
         navigate('/error');
       });
   };
-
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -45,15 +49,21 @@ const Header = () => {
         alt='logo'
       />
       {user && (
-        <div className='mt-10 flex'>
-          <button className='py-3 px-4 bg-gray-200 bg-opacity-90 text-black'>GPT Search</button>
+        <div className='mt-10 flex font-jakarta'>
+          <button className='py-3 px-4 bg-gray-200 bg-opacity-90 mx-8 rounded-lg font-semibold text-black'
+          onClick={handleSearchgpt}
+          
+          >
+            GPT Search
+            </button>
           <img
-            className='w-10 invert'
+            className='w-10 h-10 invert'
             src={userIcon}
             alt='userIcon'
           />
           <button
-            className='mx-4 bg-red-700 text-white font-jakarta text-bold py-2 px-4 rounded-3xl'
+            className='mx-4 bg-red-700 text-white font-jakarta text-bold py-2 px-4 rounded-lg
+            hover:py-2 hover:px-3 hover:transition-all linear .4s'
             onClick={handleSignOut}
           >
             Sign Out
