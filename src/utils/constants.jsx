@@ -10,4 +10,4 @@ export const API_OPTS= {
     }
   };
 export const POSTER_URL="https://image.tmdb.org/t/p/w500"  
-  
+export const LAN_CONST=[{identifier:"en",name:"English"},{identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]

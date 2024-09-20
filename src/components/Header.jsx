@@ -5,14 +5,18 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { addUser, removeUser } from '../utils/userSlice';
-import { logo, userIcon } from '../utils/constants';
+import { LAN_CONST, logo, userIcon } from '../utils/constants';
 import { toggleGPTSearchView } from '../utils/gptSlice';
+import { changeLanguage } from '../utils/configSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  
+  const showGPTSearch=useSelector((store)=>store.gpt.showGPTSearch)
+  const handleLanguageChange=(e)=>{
+    dispatch(changeLanguage(e.target.value))
+  }
   const handleSearchgpt=()=>{
     dispatch(toggleGPTSearchView())
   }
@@ -50,11 +54,18 @@ const Header = () => {
       />
       {user && (
         <div className='mt-10 flex font-jakarta'>
-          <button className='py-3 px-4 bg-gray-200 bg-opacity-90 mx-8 rounded-lg font-semibold text-black'
+          { showGPTSearch && (<select name="" className='p-2 m-2 bg-black rounded-sm text-white'
+          onChange={handleLanguageChange}>
+            {LAN_CONST.map(lang=>
+                 <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+            )}
+                    
+          </select>)}
+          <button className='py-3 px-4 font-jakarta bg-gray-200 bg-opacity-90 mx-8 rounded-lg font-bold text-black'
           onClick={handleSearchgpt}
           
           >
-            GPT Search
+           {showGPTSearch?"Home": "GPT Search"}
             </button>
           <img
             className='w-10 h-10 invert'
@@ -62,7 +73,7 @@ const Header = () => {
             alt='userIcon'
           />
           <button
-            className='mx-4 bg-red-700 text-white font-jakarta text-bold py-2 px-4 rounded-lg
+            className='mx-4 bg-red-700 text-white  font-jakarta text-semibold py-2 px-4 rounded-lg
             hover:py-2 hover:px-3 hover:transition-all linear .4s'
             onClick={handleSignOut}
           >
