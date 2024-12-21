@@ -6,7 +6,7 @@ export const API_OPTS= {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwM2E1MGM2YWRiMjA1NjA5NGM2NTQ4NDU2YTg3MmVhOCIsIm5iZiI6MTcyNjQ3MDM1NC41ODI3ODIsInN1YiI6IjY2ZTdkMzNiMDUwZjE0ZTRmY2NmZDdjNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z1vZAAvmZWnAMDoRQhF-f03ECSi-CqKP4afYwUTg1Kw'
+      Authorization: 'gemini api key here'
     }
   };
 export const POSTER_URL="https://image.tmdb.org/t/p/w500"  
